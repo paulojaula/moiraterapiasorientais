@@ -4,9 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Equilíbrio & Vitalidade | Acupuntura Tradicional</title>
-  <!-- Fontes -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400&display=swap" rel="stylesheet"/>
-  <!-- Font Awesome para ícones -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
     :root {
@@ -17,34 +15,10 @@
       --verde-profundo: #0b3d2e;
       --verde-claro: #6fa88c;
     }
-    body {
-      margin:0;
-      padding:0;
-      background-color:var(--verde-profundo);
-      color:var(--branco-gelo);
-      font-family:'Lato',sans-serif;
-      position:relative;
-      overflow-x:hidden;
-    }
-    /* Logo transparente como fundo */
-    body::before {
-      content:"";
-      background:url('terapi.png') no-repeat center center;
-      background-size:70%;
-      opacity:0.08;
-      position:absolute;
-      top:0; left:0;
-      width:100%; height:100%;
-      z-index:0;
-    }
+    body {margin:0;padding:0;background-color:var(--verde-profundo);color:var(--branco-gelo);font-family:'Lato',sans-serif;position:relative;overflow-x:hidden;}
+    body::before {content:"";background:url('terapi.png') no-repeat center center;background-size:70%;opacity:0.08;position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;}
     .top-bar {background-color:var(--bege-claro);color:#4a3a2a;padding:12px 0;border-bottom:2px solid var(--dourado);position:relative;z-index:1;}
-    .top-bar .container {
-      display:flex;
-      gap:30px;
-      align-items:center;
-      flex-wrap:wrap;
-      justify-content:center;
-    }
+    .top-bar .container {display:flex;gap:30px;align-items:center;flex-wrap:wrap;justify-content:center;}
     .contact-info {display:flex;align-items:center;gap:8px;text-decoration:none;color:inherit;font-size:1.1rem;font-weight:bold;}
     .container {max-width:1200px;margin:0 auto;padding:0 20px;position:relative;z-index:1;}
     .hero {display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:40px;padding:80px 0 40px;}
@@ -54,78 +28,25 @@
     .text-area h1 {font-family:'Playfair Display',serif;font-size:4rem;color:var(--dourado);margin-bottom:20px;}
     .text-area p {font-size:1.6rem;color:var(--branco-gelo);font-style:italic;max-width:700px;opacity:0.95;line-height:1.6;}
 
-    /* Cards em grid */
-    .servicos-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 40px;
-      margin-top: 50px;
-      padding-bottom: 100px;
-    }
-    .servico-bloco {
-      background: var(--verde-suave);
-      border-radius: 16px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .servico-bloco:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.35);
-    }
-    .imagem-servico img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      border-bottom: 4px solid var(--dourado);
-    }
-    .menus-servico {padding: 20px;}
+    .servicos-container {display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:40px;margin-top:50px;padding-bottom:100px;}
+    .servico-bloco {background:var(--verde-suave);border-radius:16px;box-shadow:0 6px 18px rgba(0,0,0,0.25);overflow:hidden;transition:transform 0.3s ease,box-shadow 0.3s ease;}
+    .servico-bloco:hover {transform:translateY(-8px);box-shadow:0 10px 25px rgba(0,0,0,0.35);}
+    .imagem-servico img {width:100%;height:220px;object-fit:cover;border-bottom:4px solid var(--dourado);}
+    .menus-servico {padding:20px;}
     .servico-item {border-radius:12px;overflow:hidden;}
-    .servico-header {
-      width:100%;
-      padding:15px;
-      background:var(--verde-claro);
-      border:none;
-      color:var(--branco-gelo);
-      font-family:'Playfair Display',serif;
-      font-size:1.3rem;
-      text-align:left;
-      cursor:pointer;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      border-radius:8px;
-      transition: background 0.3s ease;
-    }
+    .servico-header {width:100%;padding:15px;background:var(--verde-claro);border:none;color:var(--branco-gelo);font-family:'Playfair Display',serif;font-size:1.3rem;text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;border-radius:8px;transition:background 0.3s ease;}
     .servico-header i {margin-right:10px;}
     .servico-header:hover {background:var(--dourado);color:var(--verde-profundo);}
     .servico-header::after {content:'▼';font-size:1.2rem;}
     .servico-content {max-height:0;overflow:hidden;transition:max-height 0.6s ease;}
-    .text-padding {
-      padding:20px;
-      color:var(--branco-gelo);
-      line-height:1.8;
-      font-size:1.1rem;
-    }
+    .text-padding {padding:20px;color:var(--branco-gelo);line-height:1.8;font-size:1.1rem;}
+    .saiba-mais {display:inline-block;margin-top:10px;color:var(--dourado);font-weight:bold;text-decoration:none;border-bottom:1px solid transparent;transition:border-color 0.2s ease;}
+    .saiba-mais:hover {border-bottom:1px solid var(--dourado);}
+
     footer {text-align:center;padding:40px;color:var(--verde-suave);font-size:0.9rem;letter-spacing:2px;text-transform:uppercase;position:relative;z-index:1;}
 
-    /* Botão de música na faixa superior */
-    .music-button {
-      background: linear-gradient(135deg, #c5a059, #6fa88c);
-      color: white;
-      border: none;
-      padding: 8px 16px;
-      font-size: 1rem;
-      font-family: 'Playfair Display', serif;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: transform 0.2s ease, background 0.3s ease;
-      margin-left: 20px;
-    }
-    .music-button:hover {
-      transform: scale(1.05);
-      background: linear-gradient(135deg, #d4b46a, #7fb89c);
-    }
+    .music-button {background:linear-gradient(135deg,#c5a059,#6fa88c);color:white;border:none;padding:8px 16px;font-size:1rem;font-family:'Playfair Display',serif;border-radius:8px;cursor:pointer;transition:transform 0.2s ease,background 0.3s ease;margin-left:20px;}
+    .music-button:hover {transform:scale(1.05);background:linear-gradient(135deg,#d4b46a,#7fb89c);}
   </style>
 </head>
 <body>
@@ -136,9 +57,8 @@
       <a href="https://wa.me/5513988424558" class="contact-info"><i class="fa-brands fa-whatsapp"></i> WhatsApp: (13) 98842-4558</a>
       <span class="contact-info"><i class="fa-solid fa-location-dot"></i> R. Silva Jardim, 166 - Santos - SP</span>
 
-      <!-- Botão de música na faixa superior -->
       <button class="music-button" onclick="playMusic()">🎵 Relaxamento</button>
-      <audio id="relaxMusic" loop>
+      <audio id="relaxMusic" preload="auto" loop>
         <source src="relaxamento.mp3" type="audio/mpeg">
         Seu navegador não suporta áudio.
       </audio>
@@ -164,9 +84,16 @@
         </div>
         <div class="menus-servico">
           <div class="servico-item">
-            <button class="servico-header" onclick="window.location.href='pagina1.html'">
+            <button class="servico-header" onclick="toggleServico(this)">
               <i class="fa-solid fa-spa"></i> Acupuntura Sistêmica
             </button>
+            <div class="servico-content">
+              <div class="text-padding">
+                Técnica milenar que utiliza agulhas em pontos estratégicos do corpo para restaurar o fluxo energético, aliviar dores e promover equilíbrio físico e emocional.
+                <br/>
+                <a href="pagina1.html" class="saiba-mais">Saiba mais</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -182,7 +109,9 @@
               <i class="fa-solid fa-fire"></i> Terapias de Fogo
             </button>
             <div class="servico-content">
-              <div class="text-padding">Técnicas que utilizam calor e fogo para estimular pontos energéticos e promover equilíbrio vital.</div>
+              <div class="text-padding">
+                Técnicas que utilizam calor e fogo para estimular pontos energéticos e promover equilíbrio vital.
+              </div>
             </div>
           </div>
         </div>
@@ -236,6 +165,7 @@
   <script>
     function toggleServico(button) {
       const content = button.nextElementSibling;
+      if (!content) return;
       if (content.style.maxHeight) {
         content.style.maxHeight = null;
       } else {
@@ -245,10 +175,15 @@
 
     function playMusic() {
       const audio = document.getElementById("relaxMusic");
-      audio.muted = false; // garante que não está mudo
-      audio.play().catch(err => {
-        console.log("Clique no botão deve liberar o áudio:", err);
-      });
+      if (!audio) return;
+      audio.muted = false;
+      if (audio.paused) {
+        audio.play().catch(() => {
+          // Em alguns navegadores é necessário uma interação; o clique já resolve.
+        });
+      } else {
+        audio.pause();
+      }
     }
   </script>
 </body>

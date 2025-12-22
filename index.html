@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Equilíbrio & Vitalidade | Acupuntura Tradicional</title>
+  <!-- Fontes -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400&display=swap" rel="stylesheet"/>
+  <!-- Font Awesome para ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    :root {
+      --dourado: #c5a059;
+      --bege-claro: #f4f1ea;
+      --branco-gelo: #f8f8f5;
+      --verde-suave: #4a675d;
+      --verde-profundo: #0b3d2e;
+      --verde-claro: #6fa88c;
+    }
+    body {
+      margin:0;
+      padding:0;
+      background-color:var(--verde-profundo);
+      color:var(--branco-gelo);
+      font-family:'Lato',sans-serif;
+      position:relative;
+      overflow-x:hidden;
+    }
+    /* Logo transparente como fundo */
+    body::before {
+      content:"";
+      background:url('terapi.png') no-repeat center center;
+      background-size:70%; /* aumenta o logo */
+      opacity:0.08; /* deixa transparente */
+      position:absolute;
+      top:0; left:0;
+      width:100%; height:100%;
+      z-index:0;
+    }
+    .top-bar {background-color:var(--bege-claro);color:#4a3a2a;padding:12px 0;border-bottom:2px solid var(--dourado);position:relative;z-index:1;}
+    .top-bar .container {
+      display:flex;
+      gap:30px;
+      align-items:center;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+    .contact-info {display:flex;align-items:center;gap:8px;text-decoration:none;color:inherit;font-size:1.1rem;font-weight:bold;}
+    .container {max-width:1200px;margin:0 auto;padding:0 20px;position:relative;z-index:1;}
+    .hero {display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:40px;padding:80px 0 40px;}
+    .logo-area {flex:1;min-width:280px;text-align:center;}
+    .main-logo-img {max-width:400px;height:auto;}
+    .text-area {flex:2;min-width:300px;text-align:left;}
+    .text-area h1 {font-family:'Playfair Display',serif;font-size:4rem;color:var(--dourado);margin-bottom:20px;}
+    .text-area p {font-size:1.6rem;color:var(--branco-gelo);font-style:italic;max-width:700px;opacity:0.95;line-height:1.6;}
+
+    /* NOVO: Cards em grid */
+    .servicos-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 40px;
+      margin-top: 50px;
+      padding-bottom: 100px;
+    }
+    .servico-bloco {
+      background: var(--verde-suave);
+      border-radius: 16px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .servico-bloco:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+    }
+    .imagem-servico img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-bottom: 4px solid var(--dourado);
+    }
+    .menus-servico {
+      padding: 20px;
+    }
+    .servico-item {border-radius:12px;overflow:hidden;}
+    .servico-header {
+      width:100%;
+      padding:15px;
+      background:var(--verde-claro);
+      border:none;
+      color:var(--branco-gelo);
+      font-family:'Playfair Display',serif;
+      font-size:1.3rem;
+      text-align:left;
+      cursor:pointer;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      border-radius:8px;
+      transition: background 0.3s ease;
+    }
+    .servico-header i {margin-right:10px;}
+    .servico-header:hover {background:var(--dourado);color:var(--verde-profundo);}
+    .servico-header::after {content:'▼';font-size:1.2rem;}
+    .servico-content {max-height:0;overflow:hidden;transition:max-height 0.6s ease;}
+    .text-padding {
+      padding:20px;
+      color:var(--branco-gelo);
+      line-height:1.8;
+      font-size:1.1rem;
+    }
+    footer {text-align:center;padding:40px;color:var(--verde-suave);font-size:0.9rem;letter-spacing:2px;text-transform:uppercase;position:relative;z-index:1;}
+  </style>
+</head>
+<body>
+  <header class="top-bar">
+    <div class="container">
+      <span class="contact-info">Agende sua Consulta:</span>
+      <a href="tel:13988424558" class="contact-info"><i class="fa-solid fa-phone"></i> Tel: (13) 98842-4558</a>
+      <a href="https://wa.me/5513988424558" class="contact-info"><i class="fa-brands fa-whatsapp"></i> WhatsApp: (13) 98842-4558</a>
+      <span class="contact-info"><i class="fa-solid fa-location-dot"></i> R. Silva Jardim, 166 - Santos - SP</span>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="logo-area">
+        <img src="terapi.png" alt="Logo Moira" class="main-logo-img"/>
+      </div>
+      <div class="text-area">
+        <h1>Acupuntura & Bem-Estar</h1>
+        <p>Harmonize sua energia vital e recupere o equilíbrio natural do seu corpo através da medicina milenar.</p>
+      </div>
+    </section>
+
+    <div class="servicos-container">
+      <!-- Acupuntura Sistêmica -->
+      <div class="servico-bloco">
+        <div class="imagem-servico">
+          <img src="123.jpg" alt="Acupuntura Sistêmica"/>
+        </div>
+        <div class="menus-servico">
+          <div class="servico-item">
+            <button class="servico-header" onclick="window.location.href='pagina1.html'">
+              <i class="fa-solid fa-spa"></i> Acupuntura Sistêmica
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Terapias de Fogo -->
+      <div class="servico-bloco">
+        <div class="imagem-servico">
+          <img src="fire.jpg" alt="Terapias de Fogo"/>
+        </div>
+        <div class="menus-servico">
+          <div class="servico-item">
+            <button class="servico-header" onclick="toggleServico(this)">
+              <i class="fa-solid fa-fire"></i> Terapias de Fogo
+            </button>
+            <div class="servico-content">
+              <div class="text-padding">Técnicas que utilizam calor e fogo para estimular pontos energéticos e promover equilíbrio vital.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Auriculoterapia -->
+      <div class="servico-bloco">
+        <div class="imagem-servico">
+          <img src="auri.jpg" alt="Auriculoterapia"/>
+        </div>
+        <div class="menus-servico">
+          <div class="servico-item">
+            <button class="servico-header" onclick="toggleServico(this)">
+              <i class="fa-solid fa-ear-listen"></i> Auriculoterapia
+            </button>
+            <div class="servico-content">
+              <div class="text-padding">Técnica que utiliza pontos específicos na orelha para tratar dores, ansiedade e insônia, promovendo equilíbrio físico e emocional.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ventosaterapia -->
+      <div class="servico-bloco">
+        <div class="imagem-servico">
+          <img src="ventosa.jpg" alt="Ventosaterapia"/>
+        </div>
+        <div class="menus-servico">

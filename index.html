@@ -14,180 +14,257 @@
       --verde-suave: #4a675d;
       --verde-profundo: #0b3d2e;
       --verde-claro: #6fa88c;
+      --whatsapp-green: #25D366;
+      --insta-gradient: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
     }
     body {margin:0;padding:0;background-color:var(--verde-profundo);color:var(--branco-gelo);font-family:'Lato',sans-serif;position:relative;overflow-x:hidden;}
-    /* Fundo com a imagem terapi.png conforme sua pasta */
-    body::before {content:"";background:url('terapi.png') no-repeat center center;background-size:70%;opacity:0.08;position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;}
-    .top-bar {background-color:var(--bege-claro);color:#4a3a2a;padding:12px 0;border-bottom:2px solid var(--dourado);position:relative;z-index:1;}
-    .top-bar .container {display:flex;gap:30px;align-items:center;flex-wrap:wrap;justify-content:center;}
-    .contact-info {display:flex;align-items:center;gap:8px;text-decoration:none;color:inherit;font-size:1.1rem;font-weight:bold;}
+    
+    /* MARCA D'ÁGUA */
+    body::before {
+      content:"";
+      background: url('logo.png') no-repeat;
+      background-position: 40% center; 
+      background-size: 139%; 
+      opacity:0.04; 
+      position:fixed; 
+      top:0;
+      left:0;
+      width:100%;
+      height: 100%;
+      z-index:0;
+      pointer-events: none;
+    }
+    
+    .top-bar {background-color:var(--bege-claro);color:#4a3a2a;padding:12px 0;border-bottom:2px solid var(--dourado);position:relative;z-index:10;}
+    .top-bar .container {display:flex;gap:20px;align-items:center;flex-wrap:wrap;justify-content:center;}
+    
+    .contact-info {display:flex;align-items:center;gap:8px;text-decoration:none;color:inherit;font-size:1rem;font-weight:bold;transition: color 0.3s;}
+    .contact-info:hover {color: var(--verde-suave);}
+
+    .music-button {background:linear-gradient(135deg,#c5a059,#6fa88c);color:white;border:none;padding:8px 16px;font-size:0.9rem;font-family:'Playfair Display',serif;border-radius:8px;cursor:pointer;transition:transform 0.2s ease; min-width: 130px;}
+    .music-button:hover {transform:scale(1.05);}
+
+    /* ÍCONES FLUTUANTES 90PX */
+    .whatsapp-float {
+      position:fixed;
+      width:90px !important;
+      height:90px !important;
+      bottom:140px; 
+      right:40px;
+      background-color:var(--whatsapp-green);
+      color:#FFF;
+      border-radius:50px;
+      text-align:center;
+      font-size:45px !important;
+      box-shadow: 2px 2px 15px rgba(0,0,0,0.4);
+      z-index:100;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-decoration:none;
+      transition: transform 0.3s;
+    }
+    
+    .instagram-float {
+      position:fixed;
+      width:90px !important;
+      height:90px !important;
+      bottom:40px;
+      right:40px;
+      background:var(--insta-gradient);
+      color:#FFF;
+      border-radius:50px;
+      text-align:center;
+      font-size:45px !important;
+      box-shadow: 2px 2px 15px rgba(0,0,0,0.4);
+      z-index:100;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-decoration:none;
+      transition: transform 0.3s;
+    }
+    .whatsapp-float:hover, .instagram-float:hover {transform: scale(1.1); color: white;}
+
     .container {max-width:1200px;margin:0 auto;padding:0 20px;position:relative;z-index:1;}
-    .hero {display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:40px;padding:80px 0 40px;}
-    .logo-area {flex:1;min-width:280px;text-align:center;}
-    .main-logo-img {max-width:400px;height:auto;}
-    .text-area {flex:2;min-width:300px;text-align:left;}
-    .text-area h1 {font-family:'Playfair Display',serif;font-size:4rem;color:var(--dourado);margin-bottom:20px;}
-    .text-area p {font-size:1.6rem;color:var(--branco-gelo);font-style:italic;max-width:700px;opacity:0.95;line-height:1.6;}
+    
+    .hero {display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:40px;padding:60px 0 40px;}
+    .logo-area {flex:0 0 auto; min-width:280px; text-align:center;}
+    .main-logo-img {width:350px; max-width: 90vw; height:auto; display: block; margin: 0 auto;}
+    
+    .text-area {flex:1; min-width:300px; text-align:left;}
 
-    .servicos-container {display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:40px;margin-top:50px;padding-bottom:100px;}
-    .servico-bloco {background:var(--verde-suave);border-radius:16px;box-shadow:0 6px 18px rgba(0,0,0,0.25);overflow:hidden;transition:transform 0.3s ease,box-shadow 0.3s ease;}
-    .servico-bloco:hover {transform:translateY(-8px);box-shadow:0 10px 25px rgba(0,0,0,0.35);}
+    .text-area h1 {
+      font-family:'Playfair Display',serif;
+      font-size:clamp(3.5rem, 12vw, 6rem); 
+      color:var(--dourado);
+      margin-bottom:20px;
+      line-height:1.1;
+      font-weight: 700;
+      text-shadow: 2px 2px 15px rgba(197, 160, 89, 0.3);
+    }
+    .text-area p {font-size:1.4rem;color:var(--branco-gelo);font-style:italic;max-width:700px;opacity:0.95;line-height:1.6;}
+
+    .servicos-container {display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;margin-top:50px;padding-bottom:50px;}
+    .servico-bloco {background:var(--verde-suave);border-radius:16px;box-shadow:0 6px 18px rgba(0,0,0,0.25);overflow:hidden;transition:transform 0.3s ease;}
+    .servico-bloco:hover {transform:translateY(-8px);}
     .imagem-servico img {width:100%;height:220px;object-fit:cover;border-bottom:4px solid var(--dourado);}
-    .menus-servico {padding:20px;}
-    .servico-item {border-radius:12px;overflow:hidden;}
-    .servico-header {width:100%;padding:15px;background:var(--verde-claro);border:none;color:var(--branco-gelo);font-family:'Playfair Display',serif;font-size:1.3rem;text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;border-radius:8px;transition:background 0.3s ease;}
-    .servico-header i {margin-right:10px;}
-    .servico-header:hover {background:var(--dourado);color:var(--verde-profundo);}
-    .servico-header::after {content:'▼';font-size:1.2rem;}
-    .servico-content {max-height:0;overflow:hidden;transition:max-height 0.6s ease;}
-    .text-padding {padding:20px;color:var(--branco-gelo);line-height:1.8;font-size:1.1rem;}
-    .saiba-mais {display:inline-block;margin-top:10px;color:var(--dourado);font-weight:bold;text-decoration:none;border-bottom:1px solid transparent;transition:border-color 0.2s ease;}
-    .saiba-mais:hover {border-bottom:1px solid var(--dourado);}
+    
+    .menus-servico {padding:15px;}
+    .servico-header {width:100%;padding:15px;background:var(--verde-claro);border:none;color:var(--branco-gelo);font-family:'Playfair Display',serif;font-size:1.2rem;text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;border-radius:8px;}
+    .servico-header::after {content:'▼';font-size:0.9rem;}
+    .servico-content {max-height:0;overflow:hidden;transition:max-height 0.5s ease-out;}
+    .text-padding {padding:20px;color:var(--branco-gelo);line-height:1.7;}
+    .saiba-mais {display:inline-block;margin-top:10px;color:var(--dourado);font-weight:bold;text-decoration:none;border-bottom:1px solid var(--dourado);}
 
-    footer {text-align:center;padding:40px;color:var(--verde-suave);font-size:0.9rem;letter-spacing:2px;text-transform:uppercase;position:relative;z-index:1;}
+    /* BOTÃO FINAL "QUERO TIRAR MINHA DOR" */
+    .cta-container {text-align: center; margin: 40px auto; padding: 20px;}
+    .btn-dor {
+      display: inline-block;
+      padding: 25px 50px;
+      background: var(--bege-claro);
+      color: var(--verde-profundo);
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 50px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+      border: 2px solid var(--dourado);
+    }
+    .btn-dor:hover {
+      transform: translateY(-5px);
+      background: var(--dourado);
+      color: white;
+      box-shadow: 0 15px 25px rgba(0,0,0,0.4);
+    }
 
-    .music-button {background:linear-gradient(135deg,#c5a059,#6fa88c);color:white;border:none;padding:8px 16px;font-size:1rem;font-family:'Playfair Display',serif;border-radius:8px;cursor:pointer;transition:transform 0.2s ease,background 0.3s ease;margin-left:20px; min-width: 140px;}
-    .music-button:hover {transform:scale(1.05);background:linear-gradient(135deg,#d4b46a,#7fb89c);}
+    .secao-sobre {padding:80px 0; max-width: 900px; margin: 0 auto; text-align: center;}
+    .secao-sobre h2 {font-family:'Playfair Display',serif; font-size:3rem; color:var(--dourado); margin-bottom:30px;}
+    .sobre-conteudo {background: rgba(74, 103, 93, 0.3); padding: 50px; border-radius: 20px; border: 1px solid rgba(197, 160, 89, 0.3);}
+    .sobre-texto {font-size: 1.2rem; line-height: 1.8; color: var(--branco-gelo); margin-bottom: 40px;}
+    .sobre-foto img {width: 250px; height: 250px; border-radius: 50%; border: 3px solid var(--dourado); box-shadow: 0 0 25px rgba(0,0,0,0.4); object-fit: cover;}
+
+    .secao-endereco {text-align:left; padding:60px 0; border-top:1px solid rgba(197, 160, 89, 0.2); max-width: 1100px; margin: 0 auto;}
+    .secao-endereco h2 {font-family:'Playfair Display',serif; font-size:2.5rem; color:var(--dourado); margin-bottom:30px;}
+    .endereco-flex {display:flex; flex-wrap: wrap; gap: 40px; justify-content: center; align-items: stretch; background: var(--verde-suave); padding: 40px; border-radius: 16px; box-shadow: 0 6px 18px rgba(0,0,0,0.25);}
+    .endereco-foto {flex: 1.2; min-width: 320px; overflow: hidden; border-radius: 12px; border: 2px solid var(--dourado);}
+    .endereco-foto img {width: 100%; height: 100%; object-fit: cover;}
+    .mapa-lado {flex: 1; min-width: 300px; text-align: center; display: flex; flex-direction: column; justify-content: center;}
+    .mapa-placeholder {width: 100%; border-radius: 8px; overflow: hidden; height: 300px; background: #3a5048; display: flex; align-items: center; justify-content: center;}
+
+    footer {text-align:center;padding:40px;color:rgba(255,255,255,0.4);font-size:0.8rem;letter-spacing:2px;text-transform:uppercase;}
+
+    @media (max-width: 768px) {
+      .hero { flex-direction: column; }
+      .text-area {text-align: center;}
+      .main-logo-img { width: 280px; }
+      .text-area h1 { font-size: 3.5rem; }
+      .btn-dor { font-size: 1.5rem; padding: 20px 30px; }
+      .whatsapp-float { bottom: 120px !important; width: 70px !important; height: 70px !important; font-size: 35px !important; right: 20px !important;}
+      .instagram-float { bottom: 30px !important; width: 70px !important; height: 70px !important; font-size: 35px !important; right: 20px !important;}
+    }
   </style>
 </head>
 <body>
+
+  <a href="https://www.instagram.com/SEU_USUARIO" class="instagram-float" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+  <a href="https://wa.me/5513988424558" class="whatsapp-float" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+
   <header class="top-bar">
     <div class="container">
-      <span class="contact-info">Agende sua Consulta:</span>
-      <a href="tel:13988424558" class="contact-info"><i class="fa-solid fa-phone"></i> Tel: (13) 98842-4558</a>
-      <a href="https://wa.me/5513988424558" class="contact-info"><i class="fa-brands fa-whatsapp"></i> WhatsApp: (13) 98842-4558</a>
-      <span class="contact-info"><i class="fa-solid fa-location-dot"></i> R. Silva Jardim, 166 - Santos - SP</span>
-
+      <a href="tel:13988424558" class="contact-info"><i class="fa-solid fa-phone"></i> (13) 98842-4558</a>
+      <a href="http://maps.google.com" target="_blank" class="contact-info"><i class="fa-solid fa-location-dot"></i> R. Silva Jardim, 166 - Santos - SP</a>
       <button id="btnMusica" class="music-button" onclick="playMusic()">🎵 Relaxamento</button>
-      <audio id="relaxMusic" preload="auto" loop>
-        <source src="relaxamento.mp3" type="audio/mpeg">
-        Seu navegador não suporta áudio.
-      </audio>
+      <audio id="relaxMusic" preload="auto" loop><source src="relaxamento.mp3" type="audio/mpeg"></audio>
     </div>
   </header>
 
   <main class="container">
     <section class="hero">
-      <div class="logo-area">
-        <img src="terapi.png" alt="Logo Moira" class="main-logo-img"/>
-      </div>
+      <div class="logo-area"><img src="terapi.png" alt="Logo Moira" class="main-logo-img"/></div>
       <div class="text-area">
-        <h1>Acupuntura & Bem-Estar</h1>
+        <h1>Acupuntura &<br>Bem-Estar</h1>
         <p>Harmonize sua energia vital e recupere o equilíbrio natural do seu corpo através da medicina milenar.</p>
       </div>
     </section>
 
     <div class="servicos-container">
-      <div class="servico-bloco">
-        <div class="imagem-servico">
-          <img src="agulha1.jpg" alt="Acupuntura Sistêmica"/>
-        </div>
+        <div class="servico-bloco">
+        <div class="imagem-servico"><img src="agulha1.jpg" alt="Acupuntura"/></div>
         <div class="menus-servico">
-          <div class="servico-item">
-            <button class="servico-header" onclick="toggleServico(this)">
-              <i class="fa-solid fa-spa"></i> Acupuntura Sistêmica
-            </button>
-            <div class="servico-content">
-              <div class="text-padding">
-                Técnica milenar que utiliza agulhas em pontos estratégicos do corpo para restaurar o fluxo energético, aliviar dores e promover equilíbrio físico e emocional.
-                <br/>
-                <a href="pagina1.html" class="saiba-mais">Saiba mais</a>
-              </div>
-            </div>
+          <button class="servico-header" onclick="toggleServico(this)"><i class="fa-solid fa-spa"></i> Acupuntura</button>
+          <div class="servico-content">
+            <div class="text-padding">Restaura o fluxo energético e alivia dores.<br><a href="pagina1.html" class="saiba-mais">Saiba mais</a></div>
           </div>
         </div>
       </div>
-
       <div class="servico-bloco">
-        <div class="imagem-servico">
-          <img src="fire2.jpg" alt="Terapias de Fogo"/>
-        </div>
+        <div class="imagem-servico"><img src="fire2.jpg" alt="Terapias de Fogo"/></div>
         <div class="menus-servico">
-          <div class="servico-item">
-            <button class="servico-header" onclick="toggleServico(this)">
-              <i class="fa-solid fa-fire"></i> Terapias de Fogo
-            </button>
-            <div class="servico-content">
-              <div class="text-padding">
-                Técnicas que utilizam calor e fogo para estimular pontos energéticos e promover equilíbrio vital.
-              </div>
-            </div>
-          </div>
+          <button class="servico-header" onclick="toggleServico(this)"><i class="fa-solid fa-fire"></i> Terapias de Fogo</button>
+          <div class="servico-content"><div class="text-padding">Calor terapêutico.</div></div>
         </div>
       </div>
-
       <div class="servico-bloco">
-        <div class="imagem-servico">
-          <img src="auri.jpg" alt="Auriculoterapia"/>
-        </div>
+        <div class="imagem-servico"><img src="auri.jpg" alt="Auriculoterapia"/></div>
         <div class="menus-servico">
-          <div class="servico-item">
-            <button class="servico-header" onclick="toggleServico(this)">
-              <i class="fa-solid fa-ear-listen"></i> Auriculoterapia
-            </button>
-            <div class="servico-content">
-              <div class="text-padding">
-                Técnica que utiliza pontos específicos na orelha para tratar dores, ansiedade e insônia, promovendo equilíbrio físico e emocional.
-              </div>
-            </div>
-          </div>
+          <button class="servico-header" onclick="toggleServico(this)"><i class="fa-solid fa-ear-listen"></i> Auriculoterapia</button>
+          <div class="servico-content"><div class="text-padding">Pontos auriculares.</div></div>
         </div>
       </div>
-
       <div class="servico-bloco">
-        <div class="imagem-servico">
-          <img src="vent.jpg" alt="Ventosaterapia"/>
-        </div>
+        <div class="imagem-servico"><img src="vent.jpg" alt="Ventosaterapia"/></div>
         <div class="menus-servico">
-          <div class="servico-item">
-            <button class="servico-header" onclick="toggleServico(this)">
-              <i class="fa-solid fa-wind"></i> Ventosaterapia
-            </button>
-            <div class="servico-content">
-              <div class="text-padding">
-                Técnica que utiliza ventosas para promover circulação, aliviar tensões e estimular pontos energéticos, auxiliando no bem-estar.
-              </div>
-            </div>
-          </div>
+          <button class="servico-header" onclick="toggleServico(this)"><i class="fa-solid fa-wind"></i> Ventosaterapia</button>
+          <div class="servico-content"><div class="text-padding">Circulação e tensão.</div></div>
         </div>
       </div>
-
     </div>
+
+    <section class="secao-sobre">
+      <h2>Quem é a Dra Moira Aíma ?</h2>
+      <div class="sobre-conteudo">
+        <div class="sobre-texto">
+          <p>Olá, sou especialista em Medicina Tradicional Chinesa, dedicada a proporcionar saúde e equilíbrio de forma personalizada.</p>
+        </div>
+        <div class="sobre-foto"><img src="profi.jpg" alt="Foto da Profissional"></div>
+      </div>
+    </section>
+
+    <section class="container" style="padding: 60px 0;">
+      <h2 style="font-family:'Playfair Display',serif; color:var(--dourado); font-size:2.5rem; text-align:center;">Agende sua consulta</h2>
+      <div class="cta-container">
+        <a href="https://wa.me/5513988424558?text=Olá!%20Quero%20tirar%20minha%20dor." class="btn-dor" target="_blank">Quero tirar minha dor</a>
+      </div>
+    </section>
+
+    <section class="secao-endereco">
+      <h2>Venha nos Visitar!</h2>
+      <div class="endereco-flex">
+        <div class="endereco-foto"><img src="end.png" alt="Localização Clínica"></div>
+        <div class="mapa-lado">
+          <p class="endereco-texto">Rua Silva Jardim, 166 - Santos/SP</p>
+          <div class="mapa-placeholder"><p style="opacity: 0.5;">Espaço para o mapa</p></div>
+          <a href="#" class="saiba-mais" style="margin-top: 20px;">Ver no Google Maps</a>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer>
-    © 2025 Equilíbrio & Vitalidade - Todos os direitos reservados
-  </footer>
+  <footer>© 2025 Equilíbrio & Vitalidade - Santos/SP</footer>
 
   <script>
     function toggleServico(button) {
       const content = button.nextElementSibling;
-      if (!content) return;
-      
-      if (content.style.maxHeight) {
-        content.style.maxHeight = null;
-      } else {
-        content.style.maxHeight = content.scrollHeight + "px";
-      }
+      content.style.maxHeight = content.style.maxHeight ? null : content.scrollHeight + "px";
     }
-
     function playMusic() {
       const audio = document.getElementById("relaxMusic");
       const btn = document.getElementById("btnMusica");
-      
-      if (!audio) return;
-      
-      audio.muted = false;
-      if (audio.paused) {
-        audio.play().then(() => {
-          btn.innerHTML = "⏸ Pausar";
-        }).catch((error) => {
-          console.log("Erro ao reproduzir áudio. Interação do usuário necessária.");
-        });
-      } else {
-        audio.pause();
-        btn.innerHTML = "🎵 Relaxamento";
-      }
+      if (audio.paused) { audio.play().then(() => btn.innerHTML = "⏸ Pausar"); } 
+      else { audio.pause(); btn.innerHTML = "🎵 Relaxamento"; }
     }
   </script>
 </body>

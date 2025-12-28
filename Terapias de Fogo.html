@@ -14,6 +14,7 @@
       --verde-suave: #4a675d;
       --verde-profundo: #0b3d2e;
       --verde-claro: #6fa88c;
+      --whatsapp-green: #25D366;
     }
     body {
       margin:0;
@@ -30,7 +31,7 @@
       background:url('terapi.png') no-repeat center center;
       background-size:70%; 
       opacity:0.08; 
-      position:fixed; /* Alterado para fixed para melhor cobertura */
+      position:fixed; 
       top:0; left:0;
       width:100%; height:100%;
       z-index:0;
@@ -98,6 +99,29 @@
       color: var(--dourado);
     }
 
+    /* Botão de Agendamento WhatsApp */
+    .btn-agendar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin: 30px auto 10px;
+      padding: 18px 30px;
+      background-color: var(--whatsapp-green);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    .btn-agendar:hover {
+      transform: scale(1.03);
+      background-color: #1eb956;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    }
+
     .galeria {
       display:flex;
       flex-wrap:wrap;
@@ -120,14 +144,15 @@
       width: fit-content;
       margin: 40px auto;
       padding: 15px 35px;
-      background: var(--dourado);
-      color: white;
+      background: transparent;
+      color: var(--dourado);
       text-decoration: none;
       border-radius: 50px;
+      border: 1px solid var(--dourado);
       font-weight: bold;
       transition: 0.3s;
     }
-    .btn-voltar:hover { transform: scale(1.05); background: var(--bege-claro); color: var(--verde-profundo); }
+    .btn-voltar:hover { background: var(--dourado); color: white; }
 
     footer {text-align:center;padding:60px;color:var(--verde-suave);font-size:0.9rem;letter-spacing:2px;text-transform:uppercase;position:relative;z-index:1;}
   </style>
@@ -151,7 +176,7 @@
 
         <h2>Benefícios:</h2>
         <ul>
-          <li>Alivio de dores na coluna e musculares</li>
+          <li>Alívio de dores na coluna e musculares</li>
           <li>Melhoria da flexibilidade e mobilidade</li>
           <li>Fortalecimento do sistema imunológico</li>
           <li>Redução do estresse e ansiedade</li>
@@ -166,6 +191,10 @@
           <li>Problemas cardíacos graves</li>
           <li>Pacientes com marca-passo ou dispositivos médicos implantados</li>
         </ul>
+
+        <a href="https://wa.me/5513988424558?text=Olá!%20Gostaria%20de%20agendar%20uma%20sessão%20de%20Terapia%20de%20Fogo%20do%20Dorso%20do%20Dragão." class="btn-agendar" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i> Agende agora sua consulta
+        </a>
       </div>
     </section>
 

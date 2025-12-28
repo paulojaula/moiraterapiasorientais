@@ -19,7 +19,7 @@
     }
     body {margin:0;padding:0;background-color:var(--verde-profundo);color:var(--branco-gelo);font-family:'Lato',sans-serif;position:relative;overflow-x:hidden;}
     
-    /* MARCA D'ÁGUA - MANTIDA ORIGINAL CONFORME SOLICITADO */
+    /* MARCA D'ÁGUA - MANTIDA ORIGINAL */
     body::before {
       content:"";
       background: url('logo.png') no-repeat;
@@ -90,13 +90,12 @@
     .hero {display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:40px;padding:60px 0 40px;}
     .logo-area {flex:0 0 auto; min-width:300px; text-align:center;}
     
-    /* AJUSTE: Logo aumentado de 350px para 500px */
     .main-logo-img {
       width:500px; 
       max-width: 95vw; 
       height:auto; 
       display: block; 
-      margin: -20px auto 0; /* Margem negativa para compensar o tamanho */
+      margin: -20px auto 0; 
     }
     
     .text-area {flex:1; min-width:300px; text-align:left;}
@@ -197,34 +196,43 @@
     </section>
 
     <div class="servicos-container">
-        <div class="servico-bloco">
+      <div class="servico-bloco">
         <div class="imagem-servico"><img src="agulha1.jpg" alt="Acupuntura"/></div>
         <div class="menus-servico">
-          <button class="servico-header" onclick="toggleServico(this)"><i class="fa-solid fa-spa"></i> Acupuntura</button>
+          <button class="servico-header" onclick="toggleServico(this)"><i class="fa-solid fa-spa"></i> Acupuntura Sistemica</button>
           <div class="servico-content">
-            <div class="text-padding">Restaura o fluxo energético e alivia dores.<br><a href="pagina1.html" class="saiba-mais">Saiba mais</a></div>
+            <div class="text-padding">Restaura o fluxo energético e alivia dores.<br><a href="Sistemica.html" class="saiba-mais">Saiba mais</a></div>
           </div>
         </div>
       </div>
+
       <div class="servico-bloco">
         <div class="imagem-servico"><img src="fire2.jpg" alt="Terapias de Fogo"/></div>
         <div class="menus-servico">
           <button class="servico-header" onclick="toggleServico(this)"><i class="fa-solid fa-fire"></i> Terapias de Fogo</button>
-          <div class="servico-content"><div class="text-padding">Calor terapêutico.</div></div>
+          <div class="servico-content">
+            <div class="text-padding">Calor terapêutico para equilíbrio e vitalidade.<br><a href="Terapias de Fogo.html" class="saiba-mais">Saiba mais</a></div>
+          </div>
         </div>
       </div>
+
       <div class="servico-bloco">
         <div class="imagem-servico"><img src="auri.jpg" alt="Auriculoterapia"/></div>
         <div class="menus-servico">
           <button class="servico-header" onclick="toggleServico(this)"><i class="fa-solid fa-ear-listen"></i> Auriculoterapia</button>
-          <div class="servico-content"><div class="text-padding">Pontos auriculares.</div></div>
+          <div class="servico-content">
+            <div class="text-padding">Tratamento através de pontos específicos na orelha.<br><a href="Auricoloterapia.html" class="saiba-mais">Saiba mais</a></div>
+          </div>
         </div>
       </div>
+
       <div class="servico-bloco">
         <div class="imagem-servico"><img src="vent.jpg" alt="Ventosaterapia"/></div>
         <div class="menus-servico">
-          <button class="servico-header" onclick="toggleServico(this)"><i class="fa-solid fa-wind"></i> Ventosaterapia</button>
-          <div class="servico-content"><div class="text-padding">Circulação e tensão.</div></div>
+          <button class="servico-header" onclick="toggleServico(this)"><i class="fa-solid fa-wind"></i> Ventosas</button>
+          <div class="servico-content">
+            <div class="text-padding">Melhora a circulação e alivia a tensão muscular.<br><a href="Ventosa.html" class="saiba-mais">Saiba mais</a></div>
+          </div>
         </div>
       </div>
     </div>

@@ -40,6 +40,9 @@
     .top-bar {background-color:var(--bege-claro);color:#4a3a2a;padding:12px 0;border-bottom:2px solid var(--dourado);position:relative;z-index:10;}
     .top-bar .container {display:flex;gap:20px;align-items:center;flex-wrap:wrap;justify-content:center;}
     
+    /* ESTILO PARA A LOGO LOTUS NA BARRA SUPERIOR */
+    .top-lotus {width: 25px; height: auto; vertical-align: middle; margin-right: 5px;}
+
     .contact-info {display:flex;align-items:center;gap:8px;text-decoration:none;color:inherit;font-size:1rem;font-weight:bold;transition: color 0.3s;}
     .contact-info:hover {color: var(--verde-suave);}
 
@@ -88,8 +91,6 @@
     .servicos-container {display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;margin-top:50px;padding-bottom:50px;}
     .servico-bloco {background:var(--verde-suave);border-radius:16px;box-shadow:0 6px 18px rgba(0,0,0,0.25);overflow:hidden;transition:transform 0.3s ease;}
     .servico-bloco:hover {transform:translateY(-8px);}
-    
-    /* PADRÃO DE IMAGEM PARA TODOS OS BLOCOS */
     .imagem-servico img {width:100%;height:220px;object-fit:cover;border-bottom:4px solid var(--dourado);}
     
     .menus-servico {padding:15px;}
@@ -110,11 +111,28 @@
     }
     .btn-dor:hover {transform: translateY(-5px); background: var(--dourado); color: white;}
 
-    .secao-sobre {padding:80px 0; max-width: 900px; margin: 0 auto; text-align: center;}
-    .secao-sobre h2 {font-family:'Playfair Display',serif; font-size:3rem; color:var(--dourado); margin-bottom:30px;}
-    .sobre-conteudo {background: rgba(74, 103, 93, 0.3); padding: 50px; border-radius: 20px; border: 1px solid rgba(197, 160, 89, 0.3);}
-    .sobre-texto {font-size: 1.2rem; line-height: 1.8; color: var(--branco-gelo); margin-bottom: 40px;}
-    .sobre-foto img {width: 250px; height: 250px; border-radius: 50%; border: 3px solid var(--dourado); box-shadow: 0 0 25px rgba(0,0,0,0.4); object-fit: cover;}
+    .secao-sobre {padding:80px 0; max-width: 1000px; margin: 0 auto;}
+    .secao-sobre h2 {font-family:'Playfair Display',serif; font-size:3rem; color:var(--dourado); margin-bottom:30px; text-align: center;}
+    .sobre-conteudo {
+      background: rgba(74, 103, 93, 0.3); 
+      padding: 50px; 
+      border-radius: 20px; 
+      border: 1px solid rgba(197, 160, 89, 0.3);
+      display: flex;
+      align-items: center;
+      gap: 50px;
+      text-align: left;
+    }
+    .sobre-texto {flex: 1; font-size: 1.2rem; line-height: 1.8; color: var(--branco-gelo);}
+    .sobre-foto {flex: 0 0 auto;}
+    .sobre-foto img {
+      width: 280px; 
+      height: 280px; 
+      border-radius: 50%; 
+      border: 4px solid var(--dourado); 
+      box-shadow: 0 0 30px rgba(0,0,0,0.5); 
+      object-fit: cover;
+    }
 
     .secao-endereco {text-align:left; padding:60px 0; border-top:1px solid rgba(197, 160, 89, 0.2); max-width: 1100px; margin: 0 auto;}
     .secao-endereco h2 {font-family:'Playfair Display',serif; font-size:2.5rem; color:var(--dourado); margin-bottom:30px; text-align: center;}
@@ -127,7 +145,8 @@
 
     @media (max-width: 768px) {
       .hero { flex-direction: column; }
-      .text-area {text-align: center;}
+      .sobre-conteudo { flex-direction: column; text-align: center; padding: 30px; gap: 30px; }
+      .sobre-foto img { width: 220px; height: 220px; }
       .main-logo-img { width: 320px; margin: 0 auto; }
       .text-area h1 { font-size: 3.5rem; }
       .btn-dor { font-size: 1.5rem; padding: 20px 30px; }
@@ -142,7 +161,10 @@
 
   <header class="top-bar">
     <div class="container">
-      <a href="tel:13988424558" class="contact-info"><i class="fa-solid fa-phone"></i> (13) 98842-4558</a>
+      <a href="tel:13988424558" class="contact-info">
+        <img src="lotus.png" alt="Lotus" class="top-lotus">
+        <i class="fa-solid fa-phone"></i> (13) 98842-4558
+      </a>
       <span class="contact-info"><i class="fa-solid fa-location-dot"></i> R. Silva Jardim, 166 - Santos - SP</span>
       <button id="btnMusica" class="music-button" onclick="playMusic()">🎵 Relaxamento</button>
       <audio id="relaxMusic" preload="auto" loop><source src="relaxamento.mp3" type="audio/mpeg"></audio>
@@ -223,10 +245,10 @@
     <section class="secao-sobre">
       <h2>Quem é a Dra Moira Aíma ?</h2>
       <div class="sobre-conteudo">
+        <div class="sobre-foto"><img src="profi.jpg" alt="Dra Moira Aíma"></div>
         <div class="sobre-texto">
           <p>Olá, sou especialista em Medicina Tradicional Chinesa, dedicada a proporcionar saúde e equilíbrio de forma personalizada.</p>
         </div>
-        <div class="sobre-foto"><img src="profi.jpg" alt="Dra Moira Aíma"></div>
       </div>
     </section>
 
@@ -242,7 +264,7 @@
         </div>
         <div class="mapa-lado">
           <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m13!1m3!1d3646.1082531388047!2d-46.33146442465756!3d-23.95655387853158!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce030e4453880f%3A0xc3c5188f58d08595!2sR.%20Silva%20Jardim%2C%20166%20-%20Vila%20Mathias%2C%20Santos%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1703940000000!5m2!1spt-BR!2sbr" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3646.103254593466!2d-46.330896!3d-23.956755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce037346808759%3A0x6b8453e020583b4b!2sR.%20Silva%20Jardim%2C%20166%20-%20Vila%20Mathias%2C%20Santos%20-%20SP%2C%2011015-020!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr5" 
             width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
           </iframe>
         </div>

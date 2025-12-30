@@ -56,7 +56,7 @@
       100% { box-shadow: 0 0 0 0 rgba(220, 39, 67, 0); transform: scale(1); }
     }
 
-    /* BOTÕES FLUTUANTES - VERSÃO WEB (PADRÃO) */
+    /* BOTÕES FLUTUANTES - VERSÃO WEB */
     .whatsapp-float {
       position:fixed; width:90px; height:90px; bottom:140px; right:40px; 
       background-color:var(--whatsapp-green); color:#FFF; border-radius:50px; 
@@ -73,6 +73,7 @@
     .container {max-width:1200px; margin:0 auto; padding:0 20px; position:relative; z-index:1;}
     .hero {display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:40px; padding:60px 0 40px;}
     .main-logo-img {width:500px; max-width: 95vw; height:auto; display: block; margin: -20px auto 0;}
+    
     .text-area {flex:1; min-width:300px; text-align:left;}
     .text-area h1 {font-family:'Playfair Display',serif; font-size:clamp(3.5rem, 12vw, 6rem); color:var(--dourado); margin-bottom:20px; font-weight: 700; text-shadow: 2px 2px 15px rgba(197, 160, 89, 0.3);}
     .text-area p {font-size:1.4rem; color:var(--branco-gelo); font-style:italic; line-height:1.6;}
@@ -80,6 +81,7 @@
     .servicos-container {display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:30px; margin-top:50px; padding-bottom:50px;}
     .servico-bloco {background:var(--verde-suave); border-radius:16px; box-shadow:0 6px 18px rgba(0,0,0,0.25); overflow:hidden; transition:transform 0.3s ease;}
     .servico-bloco:hover {transform:translateY(-8px);}
+    
     .imagem-servico {overflow: hidden; height: 220px; border-bottom:4px solid var(--dourado);}
     .imagem-servico img {width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;}
     .servico-bloco:hover .imagem-servico img {transform: scale(1.1);}
@@ -90,12 +92,12 @@
       text-align:left; cursor:pointer; display:flex; justify-content:space-between; 
       align-items:center; border-radius:8px;
     }
-    .servico-header i {color: var(--dourado-vibrante); margin-right: 12px;}
+    .servico-header i {color: var(--dourado-vibrante); margin-right: 12px; filter: drop-shadow(0px 0px 2px rgba(255, 215, 0, 0.4));}
     .servico-content {max-height:0; overflow:hidden; transition:max-height 0.5s ease-out;}
     .text-padding {padding:20px; color:var(--branco-gelo); line-height:1.7;}
     .saiba-mais {display:inline-block; margin-top:10px; color:var(--dourado); font-weight:bold; text-decoration:none; border-bottom:1px solid var(--dourado);}
 
-    /* BOTÃO CTA - QUERO TIRAR MINHA DOR */
+    /* BOTÃO CTA PULSANTE */
     @keyframes pulse-main { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
     @keyframes shine { 0% { left: -100%; } 20% { left: 100%; } 100% { left: 100%; } }
     .cta-container {text-align: center; margin: 60px auto; padding: 20px;}
@@ -120,32 +122,26 @@
     }
     .sobre-foto img {width: 280px; height: 280px; border-radius: 50%; border: 4px solid var(--dourado); box-shadow: 0 0 30px rgba(0,0,0,0.5); object-fit: cover;}
 
+    /* SEÇÃO ENDEREÇO RESTAURADA */
     .secao-endereco {text-align:left; padding:60px 0; border-top:1px solid rgba(197, 160, 89, 0.2); max-width: 1100px; margin: 0 auto;}
-    .endereco-flex {display:flex; flex-wrap: wrap; gap: 40px; justify-content: center; background: var(--verde-suave); padding: 40px; border-radius: 16px;}
+    .secao-endereco h2 {font-family:'Playfair Display',serif; font-size:2.5rem; color:var(--dourado); margin-bottom:30px; text-align: center;}
+    .endereco-flex {display:flex; flex-wrap: wrap; gap: 40px; justify-content: center; align-items: stretch; background: var(--verde-suave); padding: 40px; border-radius: 16px;}
+    .endereco-foto {flex: 1; min-width: 320px; border-radius: 12px; border: 2px solid var(--dourado); overflow: hidden;}
+    .endereco-foto img {width: 100%; height: 400px; object-fit: cover; display: block;}
     .mapa-lado {flex: 1; min-width: 320px; border-radius: 12px; overflow: hidden; border: 2px solid var(--dourado); height: 400px;}
 
     footer {text-align:center; padding:60px 40px; background: rgba(0,0,0,0.2); color:rgba(255,255,255,0.4); text-transform:uppercase; letter-spacing:2px; border-top: 1px solid rgba(197, 160, 89, 0.1);}
 
-    /* RESPONSIVIDADE PARA SMARTPHONE */
+    /* RESPONSIVIDADE SMARTPHONE */
     @media (max-width: 768px) {
-      /* REDUÇÃO DOS BOTÕES FLUTUANTES NO CELULAR */
-      .whatsapp-float {
-        width: 60px !important; height: 60px !important; 
-        bottom: 90px; right: 20px; font-size: 30px !important;
-      }
-      .instagram-float {
-        width: 60px !important; height: 60px !important; 
-        bottom: 20px; right: 20px; font-size: 30px !important;
-      }
-
+      .whatsapp-float { width: 60px !important; height: 60px !important; bottom: 90px; right: 20px; font-size: 30px !important; }
+      .instagram-float { width: 60px !important; height: 60px !important; bottom: 20px; right: 20px; font-size: 30px !important; }
       .hero { flex-direction: column; text-align: center;}
       .main-logo-img { width: 320px; }
-      .text-area h1 { font-size: 3.5rem; }
       .btn-dor { font-size: 1.5rem; padding: 20px 30px; }
       .sobre-conteudo { flex-direction: column; text-align: center; gap: 30px; padding: 30px; }
       .sobre-foto img { width: 200px; height: 200px; }
-      .top-bar .container { gap: 15px; }
-      .contact-info { font-size: 0.9rem; }
+      .endereco-foto img, .mapa-lado { height: 300px; }
     }
   </style>
 </head>
@@ -172,7 +168,7 @@
     <section class="hero">
       <div class="logo-area"><img src="logocentral.png" alt="Logo Moira" class="main-logo-img"/></div>
       <div class="text-area">
-        <h1>Acupuntura &<br>Bem-Estar</h1>
+        <h1>Acupuntura & Bem-Estar</h1>
         <p>Harmonize sua energia vital e recupere o equilíbrio natural do seu corpo através da medicina milenar.</p>
       </div>
     </section>
@@ -239,6 +235,7 @@
     <section class="secao-endereco">
       <h2>Venha nos Visitar!</h2>
       <div class="endereco-flex">
+        <div class="endereco-foto"><img src="end.png" alt="Clínica"></div>
         <div class="mapa-lado">
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3646.2140502283254!2d-46.331459!3d-23.953538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce039934d5f2a7%3A0xb1110d4d59170c66!2sR.%20Silva%20Jardim%2C%20166%20-%20Vila%20Mathias%2C%20Santos%20-%20SP%2C%2011015-020!5e0!3m2!1spt-BR!2sbr!4v1703950000000!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>

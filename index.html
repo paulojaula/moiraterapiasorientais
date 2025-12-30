@@ -23,7 +23,6 @@
     }
     body {margin:0;padding:0;background-color:var(--verde-profundo);color:var(--branco-gelo);font-family:'Lato',sans-serif;position:relative;overflow-x:hidden;}
     
-    /* MARCA D'ÁGUA ORIGINAL */
     body::before {
       content:"";
       background: url('logo.png') no-repeat;
@@ -88,6 +87,8 @@
     .servicos-container {display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;margin-top:50px;padding-bottom:50px;}
     .servico-bloco {background:var(--verde-suave);border-radius:16px;box-shadow:0 6px 18px rgba(0,0,0,0.25);overflow:hidden;transition:transform 0.3s ease;}
     .servico-bloco:hover {transform:translateY(-8px);}
+    
+    /* PADRÃO DE IMAGEM PARA TODOS OS BLOCOS */
     .imagem-servico img {width:100%;height:220px;object-fit:cover;border-bottom:4px solid var(--dourado);}
     
     .menus-servico {padding:15px;}
@@ -208,11 +209,11 @@
       </div>
 
       <div class="servico-bloco">
-        <div class="imagem-servico"><img src="lotus.png" alt="Novidade" style="padding: 20px; opacity: 0.5;"/></div>
+        <div class="imagem-servico"><img src="lotus.png" alt="Flor de Lotus"/></div>
         <div class="menus-servico">
           <button class="servico-header" onclick="toggleServico(this)"><i class="fa-solid fa-hourglass-half"></i> Em breve</button>
           <div class="servico-content">
-            <div class="text-padding">Estamos preparando novidades.<br><a href="Emcontrução2.html" class="saiba-mais">Saiba mais</a></div>
+            <div class="text-padding">Estamos preparando novidades.<br><a href="Emcontrução2.html" class="saiba-mais">Ver detalhes</a></div>
           </div>
         </div>
       </div>
@@ -240,7 +241,7 @@
         </div>
         <div class="mapa-lado">
           <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3646.242557555848!2d-46.33158402465747!3d-23.951877678536294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce03767228a071%3A0xc31782e4604d30c0!2sR.%20Silva%20Jardim%2C%20166%20-%20Vila%20Mathias%2C%20Santos%20-%20SP%2C%2011015-020!5e0!3m2!1spt-BR!2sbr!4v1715874235891!5m2!1spt-BR!2sbr" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3646.332304193655!2d-46.33128362470764!3d-23.948655278536893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce03125e61019f%3A0x69680327f12e160a!2sR.%20Silva%20Jardim%2C%20166%20-%20Vila%20Mathias%2C%20Santos%20-%20SP%2C%2011015-020!5e0!3m2!1spt-BR!2sbr!4v1710000000000!5m2!1spt-BR!2sbr" 
             width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
           </iframe>
         </div>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Auriculoterapia | Equilíbrio & Vitalidade</title>
+  <title>Auriculoterapia Chinesa | Equilíbrio & Vitalidade</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
@@ -37,7 +37,7 @@
       z-index:0;
       pointer-events: none;
     }
-    .top-bar {background-color:var(--bege-claro);color:#4a3a2a;padding:12px 0;border-bottom:2px solid var(--dourado);position:relative;z-index:1;}
+    .top-bar {background-color:var(--bege-claro);color:#4a3a2a;padding:12px 0;border-bottom:2px solid var(--dourado);position:relative;z-index:10;}
     .top-bar .container {
       display:flex;
       gap:30px;
@@ -68,12 +68,34 @@
       margin-bottom:25px;
       text-align:center;
     }
+    .text-area h2 {
+      font-family:'Playfair Display',serif;
+      font-size:1.8rem;
+      color:var(--dourado);
+      margin: 30px 0 15px 0;
+    }
     .text-area p {
       font-size:1.2rem;
       color:var(--branco-gelo);
       line-height:1.8;
       text-align:justify;
       margin-bottom: 20px;
+    }
+    .text-area ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 20px;
+    }
+    .text-area ul li {
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .text-area ul li::before {
+      content: "✦";
+      color: var(--dourado);
     }
 
     /* Botão de Agendamento WhatsApp */
@@ -146,15 +168,31 @@
   <main class="container">
     <section class="hero">
       <div class="text-area">
-        <h1>Auriculoterapia</h1>
+        <h1>Auriculoterapia Chinesa: Equilíbrio e Saúde através da Orelha</h1>
         <p>
-          A Auriculoterapia é uma técnica terapêutica que utiliza o pavilhão auricular como um mapa do corpo humano. Através da estimulação de pontos específicos na orelha, é possível tratar diversas condições físicas e emocionais, promovendo o equilíbrio energético do organismo.
+          A Auriculoterapia Chinesa é uma técnica terapêutica que utiliza a estimulação de pontos específicos na orelha para promover o equilíbrio energético e a saúde do corpo.
         </p>
         <p>
-          É um método extremamente eficaz para o controle da ansiedade, auxílio no emagrecimento, tratamento de dores musculares e distúrbios do sono. A aplicação pode ser feita com agulhas finas, sementes ou cristais, tornando-se uma opção versátil para todas as idades.
+          É baseada na ideia de que a orelha é um microcosmo do corpo, com pontos específicos que correspondem a diferentes órgãos e sistemas. A estimulação desses pontos pode ajudar a restaurar o equilíbrio energético e aliviar sintomas.
         </p>
 
-        <a href="https://wa.me/5513988424558?text=Olá!%20Gostaria%20de%20agendar%20uma%20sessão%20de%20Auriculoterapia." class="btn-agendar" target="_blank">
+        <h2>Benefícios da Auriculoterapia Chinesa:</h2>
+        <ul>
+          <li>Alívio de dores crônicas e agudas</li>
+          <li>Redução do estresse e ansiedade</li>
+          <li>Melhoria da qualidade do sono</li>
+          <li>Fortalecimento do sistema imunológico</li>
+          <li>Tratamento de doenças crônicas</li>
+          <li>Controle de peso e redução de apetite</li>
+          <li>Melhoria da concentração e foco</li>
+        </ul>
+
+        <h2>Como funciona:</h2>
+        <p>
+          A Auriculoterapia Chinesa utiliza técnicas de estimulação, como agulhas, laser, sementes ou cristais.
+        </p>
+
+        <a href="https://wa.me/5513988424558?text=Olá!%20Gostaria%20de%20agendar%20uma%20sessão%20de%20Auriculoterapia%20Chinesa." class="btn-agendar" target="_blank">
             <i class="fa-brands fa-whatsapp"></i> Agende agora sua consulta
         </a>
       </div>

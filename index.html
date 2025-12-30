@@ -37,16 +37,44 @@
       pointer-events: none;
     }
     
-    .top-bar {background-color:var(--bege-claro);color:#4a3a2a;padding:12px 0;border-bottom:2px solid var(--dourado);position:relative;z-index:10;}
-    .top-bar .container {display:flex;gap:20px;align-items:center;flex-wrap:wrap;justify-content:center;}
+    /* BARRA SUPERIOR REFINADA COM MAIOR ESPAÇAMENTO */
+    .top-bar {background-color:var(--bege-claro);color:#4a3a2a;padding:15px 0;border-bottom:2px solid var(--dourado);position:relative;z-index:10;}
+    .top-bar .container {
+        display:flex;
+        gap:40px; /* Aumentado para afastar as informações */
+        align-items:center;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
     
-    /* ESTILO PARA A LOGO LOTUS NA BARRA SUPERIOR */
-    .top-lotus {width: 25px; height: auto; vertical-align: middle; margin-right: 5px;}
+    .top-lotus {width: 28px; height: auto; vertical-align: middle; margin-right: 15px;}
 
-    .contact-info {display:flex;align-items:center;gap:8px;text-decoration:none;color:inherit;font-size:1rem;font-weight:bold;transition: color 0.3s;}
+    .contact-info {
+        display:flex;
+        align-items:center;
+        gap:12px; /* Espaço interno entre ícone e texto */
+        text-decoration:none;
+        color:inherit;
+        font-size:1rem;
+        font-weight:bold;
+        transition: color 0.3s;
+        letter-spacing: 0.5px;
+    }
     .contact-info:hover {color: var(--verde-suave);}
 
-    .music-button {background:linear-gradient(135deg,#c5a059,#6fa88c);color:white;border:none;padding:8px 16px;font-size:0.9rem;font-family:'Playfair Display',serif;border-radius:8px;cursor:pointer;transition:transform 0.2s ease; min-width: 130px;}
+    .music-button {
+        background:linear-gradient(135deg,#c5a059,#6fa88c);
+        color:white;
+        border:none;
+        padding:10px 22px;
+        font-size:0.9rem;
+        font-family:'Playfair Display',serif;
+        border-radius:8px;
+        cursor:pointer;
+        transition:transform 0.2s ease;
+        min-width: 140px;
+        margin-left: 10px;
+    }
     .music-button:hover {transform:scale(1.05);}
 
     .whatsapp-float {
@@ -145,6 +173,8 @@
 
     @media (max-width: 768px) {
       .hero { flex-direction: column; }
+      .top-bar .container { gap: 15px; padding: 10px; }
+      .music-button { min-width: 120px; padding: 8px 15px; }
       .sobre-conteudo { flex-direction: column; text-align: center; padding: 30px; gap: 30px; }
       .sobre-foto img { width: 220px; height: 220px; }
       .main-logo-img { width: 320px; margin: 0 auto; }
@@ -165,7 +195,9 @@
         <img src="lotus.png" alt="Lotus" class="top-lotus">
         <i class="fa-solid fa-phone"></i> (13) 98842-4558
       </a>
-      <span class="contact-info"><i class="fa-solid fa-location-dot"></i> R. Silva Jardim, 166 - Santos - SP</span>
+      <span class="contact-info">
+        <i class="fa-solid fa-location-dot"></i> R. Silva Jardim, 166 - Santos - SP
+      </span>
       <button id="btnMusica" class="music-button" onclick="playMusic()">🎵 Relaxamento</button>
       <audio id="relaxMusic" preload="auto" loop><source src="relaxamento.mp3" type="audio/mpeg"></audio>
     </div>
@@ -264,7 +296,7 @@
         </div>
         <div class="mapa-lado">
           <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3646.103254593466!2d-46.330896!3d-23.956755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce037346808759%3A0x6b8453e020583b4b!2sR.%20Silva%20Jardim%2C%20166%20-%20Vila%20Mathias%2C%20Santos%20-%20SP%2C%2011015-020!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr5" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3646.220194458315!2d-46.33159932454131!3d-23.95171727853606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce030cfd21f8a7%3A0x673558313495818d!2sR.%20Silva%20Jardim%2C%20166%20-%20Vila%20Mathias%2C%20Santos%20-%20SP%2C%2011015-020!5e0!3m2!1spt-BR!2sbr!4v1703948500000!5m2!1spt-BR!2sbr" 
             width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
           </iframe>
         </div>

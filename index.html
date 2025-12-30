@@ -14,6 +14,7 @@
   <style>
     :root {
       --dourado: #c5a059;
+      --dourado-vibrante: #FFD700; /* Amarelo ouro mais claro e visível */
       --bege-claro: #f4f1ea;
       --branco-gelo: #f8f8f5;
       --verde-suave: #4a675d;
@@ -37,11 +38,10 @@
       pointer-events: none;
     }
     
-    /* BARRA SUPERIOR REFINADA COM MAIOR ESPAÇAMENTO */
     .top-bar {background-color:var(--bege-claro);color:#4a3a2a;padding:15px 0;border-bottom:2px solid var(--dourado);position:relative;z-index:10;}
     .top-bar .container {
         display:flex;
-        gap:40px; /* Aumentado para afastar as informações */
+        gap:40px; 
         align-items:center;
         flex-wrap:wrap;
         justify-content:center;
@@ -51,142 +51,150 @@
 
     .contact-info {
         display:flex;
-        align-items:center;
-        gap:12px; /* Espaço interno entre ícone e texto */
-        text-decoration:none;
-        color:inherit;
-        font-size:1rem;
-        font-weight:bold;
+        align-items:center; gap:12px;
+        text-decoration:none; color:inherit;
+        font-size:1rem; font-weight:bold;
         transition: color 0.3s;
-        letter-spacing: 0.5px;
     }
     .contact-info:hover {color: var(--verde-suave);}
 
     .music-button {
         background:linear-gradient(135deg,#c5a059,#6fa88c);
-        color:white;
-        border:none;
-        padding:10px 22px;
-        font-size:0.9rem;
-        font-family:'Playfair Display',serif;
-        border-radius:8px;
-        cursor:pointer;
-        transition:transform 0.2s ease;
-        min-width: 140px;
-        margin-left: 10px;
+        color:white; border:none; padding:10px 22px;
+        font-size:0.9rem; font-family:'Playfair Display',serif;
+        border-radius:8px; cursor:pointer; transition:transform 0.2s ease;
     }
-    .music-button:hover {transform:scale(1.05);}
+
+    /* ANIMAÇÕES */
+    @keyframes pulse-green {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); transform: scale(1); }
+      70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); transform: scale(1.05); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); transform: scale(1); }
+    }
+    @keyframes pulse-insta {
+      0% { box-shadow: 0 0 0 0 rgba(220, 39, 67, 0.7); transform: scale(1); }
+      70% { box-shadow: 0 0 0 15px rgba(220, 39, 67, 0); transform: scale(1.05); }
+      100% { box-shadow: 0 0 0 0 rgba(220, 39, 67, 0); transform: scale(1); }
+    }
+    @keyframes pulse-main {
+      0% { transform: scale(1); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+      50% { transform: scale(1.05); box-shadow: 0 15px 30px rgba(197, 160, 89, 0.4); }
+      100% { transform: scale(1); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+    }
+    @keyframes shine {
+      0% { left: -100%; }
+      20% { left: 100%; }
+      100% { left: 100%; }
+    }
 
     .whatsapp-float {
-      position:fixed;
-      width:90px !important; height:90px !important;
-      bottom:140px; right:40px;
-      background-color:var(--whatsapp-green);
-      color:#FFF; border-radius:50px;
-      text-align:center; font-size:45px !important;
-      box-shadow: 2px 2px 15px rgba(0,0,0,0.4);
-      z-index:100; display:flex; align-items:center; justify-content:center;
-      text-decoration:none; transition: transform 0.3s;
+      position:fixed; width:90px; height:90px;
+      bottom:140px; right:40px; background-color:var(--whatsapp-green);
+      color:#FFF; border-radius:50px; text-align:center; font-size:45px;
+      box-shadow: 2px 2px 15px rgba(0,0,0,0.4); z-index:100;
+      display:flex; align-items:center; justify-content:center;
+      text-decoration:none; animation: pulse-green 2s infinite;
     }
     
     .instagram-float {
-      position:fixed;
-      width:90px !important; height:90px !important;
-      bottom:40px; right:40px;
-      background:var(--insta-gradient);
-      color:#FFF; border-radius:50px;
-      text-align:center; font-size:45px !important;
-      box-shadow: 2px 2px 15px rgba(0,0,0,0.4);
-      z-index:100; display:flex; align-items:center; justify-content:center;
-      text-decoration:none; transition: transform 0.3s;
+      position:fixed; width:90px; height:90px;
+      bottom:40px; right:40px; background:var(--insta-gradient);
+      color:#FFF; border-radius:50px; text-align:center; font-size:45px;
+      box-shadow: 2px 2px 15px rgba(0,0,0,0.4); z-index:100;
+      display:flex; align-items:center; justify-content:center;
+      text-decoration:none; animation: pulse-insta 2s infinite;
     }
 
     .container {max-width:1200px;margin:0 auto;padding:0 20px;position:relative;z-index:1;}
     .hero {display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:40px;padding:60px 0 40px;}
-    .logo-area {flex:0 0 auto; min-width:300px; text-align:center;}
     .main-logo-img {width:500px; max-width: 95vw; height:auto; display: block; margin: -20px auto 0;}
     
-    .text-area {flex:1; min-width:300px; text-align:left;}
+    .text-area {flex:1; min-width:300px;}
     .text-area h1 {
-      font-family:'Playfair Display',serif;
-      font-size:clamp(3.5rem, 12vw, 6rem); 
-      color:var(--dourado); margin-bottom:20px;
-      line-height:1.1; font-weight: 700;
+      font-family:'Playfair Display',serif; font-size:clamp(3.5rem, 12vw, 6rem); 
+      color:var(--dourado); margin-bottom:20px; font-weight: 700;
       text-shadow: 2px 2px 15px rgba(197, 160, 89, 0.3);
     }
-    .text-area p {font-size:1.4rem;color:var(--branco-gelo);font-style:italic;max-width:700px;opacity:0.95;line-height:1.6;}
+    .text-area p {font-size:1.4rem; color:var(--branco-gelo); font-style:italic; line-height:1.6;}
 
-    .servicos-container {display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;margin-top:50px;padding-bottom:50px;}
-    .servico-bloco {background:var(--verde-suave);border-radius:16px;box-shadow:0 6px 18px rgba(0,0,0,0.25);overflow:hidden;transition:transform 0.3s ease;}
+    .servicos-container {display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:30px; margin-top:50px; padding-bottom:50px;}
+    .servico-bloco {background:var(--verde-suave); border-radius:16px; box-shadow:0 6px 18px rgba(0,0,0,0.25); overflow:hidden; transition:transform 0.3s ease;}
     .servico-bloco:hover {transform:translateY(-8px);}
-    .imagem-servico img {width:100%;height:220px;object-fit:cover;border-bottom:4px solid var(--dourado);}
+    
+    .imagem-servico {overflow: hidden; height: 220px; border-bottom:4px solid var(--dourado);}
+    .imagem-servico img {width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;}
+    .servico-bloco:hover .imagem-servico img {transform: scale(1.1);}
     
     .menus-servico {padding:15px;}
-    .servico-header {width:100%;padding:15px;background:var(--verde-claro);border:none;color:var(--branco-gelo);font-family:'Playfair Display',serif;font-size:1.2rem;text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;border-radius:8px;}
-    .servico-header::after {content:'▼';font-size:0.9rem;}
-    .servico-content {max-height:0;overflow:hidden;transition:max-height 0.5s ease-out;}
-    .text-padding {padding:20px;color:var(--branco-gelo);line-height:1.7;}
-    .saiba-mais {display:inline-block;margin-top:10px;color:var(--dourado);font-weight:bold;text-decoration:none;border-bottom:1px solid var(--dourado);}
+    
+    /* ÍCONES DO MENU SUSPENSO EM AMARELO OURO VIBRANTE */
+    .servico-header {
+      width:100%; padding:15px; background:var(--verde-claro); border:none; 
+      color:var(--branco-gelo); font-family:'Playfair Display',serif; font-size:1.2rem; 
+      text-align:left; cursor:pointer; display:flex; justify-content:space-between; 
+      align-items:center; border-radius:8px;
+    }
+    .servico-header i {
+      color: var(--dourado-vibrante); /* COR AMARELO OURO CLARA */
+      margin-right: 12px;
+      filter: drop-shadow(0px 0px 2px rgba(255, 215, 0, 0.5)); /* BRILHO SUTIL */
+    }
 
-    .cta-container {text-align: center; margin: 40px auto; padding: 20px;}
+    .servico-content {max-height:0; overflow:hidden; transition:max-height 0.5s ease-out;}
+    .text-padding {padding:20px; color:var(--branco-gelo); line-height:1.7;}
+    .saiba-mais {display:inline-block; margin-top:10px; color:var(--dourado); font-weight:bold; text-decoration:none; border-bottom:1px solid var(--dourado);}
+
+    .cta-container {text-align: center; margin: 60px auto; padding: 20px;}
     .btn-dor {
-      display: inline-block; padding: 25px 50px;
+      position: relative; display: inline-block; padding: 25px 50px;
       background: var(--bege-claro); color: var(--verde-profundo);
       font-family: 'Playfair Display', serif; font-size: 2rem;
       font-weight: bold; text-decoration: none; border-radius: 50px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.3); transition: all 0.3s ease;
-      border: 2px solid var(--dourado);
+      border: 2px solid var(--dourado); overflow: hidden;
+      animation: pulse-main 2.5s infinite ease-in-out;
     }
-    .btn-dor:hover {transform: translateY(-5px); background: var(--dourado); color: white;}
+    .btn-dor::after {
+      content: ""; position: absolute; top: -50%; left: -100%;
+      width: 50%; height: 200%; background: rgba(255, 255, 255, 0.4);
+      transform: rotate(30deg); animation: shine 4s infinite;
+    }
 
     .secao-sobre {padding:80px 0; max-width: 1000px; margin: 0 auto;}
     .secao-sobre h2 {font-family:'Playfair Display',serif; font-size:3rem; color:var(--dourado); margin-bottom:30px; text-align: center;}
     .sobre-conteudo {
-      background: rgba(74, 103, 93, 0.3); 
-      padding: 50px; 
-      border-radius: 20px; 
-      border: 1px solid rgba(197, 160, 89, 0.3);
-      display: flex;
-      align-items: center;
-      gap: 50px;
-      text-align: left;
+      background: rgba(74, 103, 93, 0.3); padding: 50px; border-radius: 20px; 
+      border: 1px solid rgba(197, 160, 89, 0.3); display: flex; align-items: center; gap: 50px;
     }
-    .sobre-texto {flex: 1; font-size: 1.2rem; line-height: 1.8; color: var(--branco-gelo);}
-    .sobre-foto {flex: 0 0 auto;}
     .sobre-foto img {
-      width: 280px; 
-      height: 280px; 
-      border-radius: 50%; 
-      border: 4px solid var(--dourado); 
-      box-shadow: 0 0 30px rgba(0,0,0,0.5); 
-      object-fit: cover;
+      width: 280px; height: 280px; border-radius: 50%; 
+      border: 4px solid var(--dourado); box-shadow: 0 0 30px rgba(0,0,0,0.5); object-fit: cover;
     }
 
     .secao-endereco {text-align:left; padding:60px 0; border-top:1px solid rgba(197, 160, 89, 0.2); max-width: 1100px; margin: 0 auto;}
     .secao-endereco h2 {font-family:'Playfair Display',serif; font-size:2.5rem; color:var(--dourado); margin-bottom:30px; text-align: center;}
-    .endereco-flex {display:flex; flex-wrap: wrap; gap: 40px; justify-content: center; align-items: stretch; background: var(--verde-suave); padding: 40px; border-radius: 16px; box-shadow: 0 6px 18px rgba(0,0,0,0.25);}
-    .endereco-foto {flex: 1; min-width: 320px; border-radius: 12px; border: 2px solid var(--dourado); overflow: hidden;}
-    .endereco-foto img {width: 100%; height: 400px; object-fit: cover; display: block;}
+    .endereco-flex {display:flex; flex-wrap: wrap; gap: 40px; justify-content: center; background: var(--verde-suave); padding: 40px; border-radius: 16px;}
+    .endereco-foto img {width: 100%; height: 400px; object-fit: cover; border-radius: 12px; border: 2px solid var(--dourado);}
     .mapa-lado {flex: 1; min-width: 320px; border-radius: 12px; overflow: hidden; border: 2px solid var(--dourado); height: 400px;}
 
-    footer {text-align:center;padding:40px;color:rgba(255,255,255,0.4);font-size:0.8rem;letter-spacing:2px;text-transform:uppercase;}
+    footer {
+        text-align:center; padding:60px 40px; background: rgba(0,0,0,0.2);
+        color:rgba(255,255,255,0.4); font-size:0.8rem; letter-spacing:2px;
+        text-transform:uppercase; border-top: 1px solid rgba(197, 160, 89, 0.1);
+    }
 
     @media (max-width: 768px) {
-      .hero { flex-direction: column; }
-      .top-bar .container { gap: 15px; padding: 10px; }
-      .music-button { min-width: 120px; padding: 8px 15px; }
-      .sobre-conteudo { flex-direction: column; text-align: center; padding: 30px; gap: 30px; }
+      .hero { flex-direction: column; text-align: center;}
+      .sobre-conteudo { flex-direction: column; text-align: center; gap: 30px; }
       .sobre-foto img { width: 220px; height: 220px; }
-      .main-logo-img { width: 320px; margin: 0 auto; }
+      .main-logo-img { width: 320px; }
       .text-area h1 { font-size: 3.5rem; }
       .btn-dor { font-size: 1.5rem; padding: 20px 30px; }
-      .endereco-foto img, .mapa-lado { height: 300px; }
     }
   </style>
 </head>
 <body>
 
-  <a href="https://www.instagram.com/dra_moira_aima" class="instagram-float" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+  <a href="https://www.instagram.com/moira.terapias/" class="instagram-float" target="_blank"><i class="fa-brands fa-instagram"></i></a>
   <a href="https://wa.me/5513988424558" class="whatsapp-float" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
 
   <header class="top-bar">
@@ -214,11 +222,11 @@
 
     <div class="servicos-container">
       <div class="servico-bloco">
-        <div class="imagem-servico"><img src="agulha1.jpg" alt="Acupuntura"/></div>
+        <div class="imagem-servico"><img src="agulha1.jpg" alt="Acupuntura Sistêmica"/></div>
         <div class="menus-servico">
           <button class="servico-header" onclick="toggleServico(this)"><i class="fa-solid fa-spa"></i> Acupuntura Sistêmica</button>
           <div class="servico-content">
-            <div class="text-padding">Equilíbrio energético integral.<br><a href="Sistemica.html" class="saiba-mais">Saiba mais</a></div>
+            <div class="text-padding"><a href="Sistemica.html" class="saiba-mais">Saiba mais</a></div>
           </div>
         </div>
       </div>
@@ -228,7 +236,7 @@
         <div class="menus-servico">
           <button class="servico-header" onclick="toggleServico(this)"><i class="fa-solid fa-fire"></i> Terapias de Fogo</button>
           <div class="servico-content">
-            <div class="text-padding">Terapia milenar com calor.<br><a href="Terapias de Fogo.html" class="saiba-mais">Saiba mais</a></div>
+            <div class="text-padding"><a href="Terapias de Fogo.html" class="saiba-mais">Saiba mais</a></div>
           </div>
         </div>
       </div>
@@ -238,17 +246,17 @@
         <div class="menus-servico">
           <button class="servico-header" onclick="toggleServico(this)"><i class="fa-solid fa-ear-listen"></i> Auriculoterapia</button>
           <div class="servico-content">
-            <div class="text-padding">Pontos reflexos na orelha.<br><a href="Auricoloterapia.html" class="saiba-mais">Saiba mais</a></div>
+            <div class="text-padding"><a href="Auricoloterapia.html" class="saiba-mais">Saiba mais</a></div>
           </div>
         </div>
       </div>
-
+      
       <div class="servico-bloco">
         <div class="imagem-servico"><img src="vent.jpg" alt="Ventosas"/></div>
         <div class="menus-servico">
           <button class="servico-header" onclick="toggleServico(this)"><i class="fa-solid fa-wind"></i> Ventosas</button>
           <div class="servico-content">
-            <div class="text-padding">Descompressão e circulação.<br><a href="Ventosa.html" class="saiba-mais">Saiba mais</a></div>
+            <div class="text-padding"><a href="Ventosa.html" class="saiba-mais">Saiba mais</a></div>
           </div>
         </div>
       </div>
@@ -258,17 +266,17 @@
         <div class="menus-servico">
           <button class="servico-header" onclick="toggleServico(this)"><i class="fa-solid fa-brain"></i> Craniopuntura</button>
           <div class="servico-content">
-            <div class="text-padding">Estimulação cerebral terapêutica.<br><a href="Craniopuntura.html" class="saiba-mais">Saiba mais</a></div>
+            <div class="text-padding"><a href="Craniopuntura.html" class="saiba-mais">Saiba mais</a></div>
           </div>
         </div>
       </div>
 
       <div class="servico-bloco">
-        <div class="imagem-servico"><img src="embreve.jpg" alt="Novidade chegando"/></div>
+        <div class="imagem-servico"><img src="embreve.jpg" alt="Em breve"/></div>
         <div class="menus-servico">
           <button class="servico-header" onclick="toggleServico(this)"><i class="fa-solid fa-hourglass-half"></i> Em breve</button>
           <div class="servico-content">
-            <div class="text-padding">Estamos preparando novidades.<br><a href="Emcontrução2.html" class="saiba-mais">Saiba mais</a></div>
+            <div class="text-padding"><a href="Emcontrução2.html" class="saiba-mais">Saiba mais</a></div>
           </div>
         </div>
       </div>
@@ -279,7 +287,7 @@
       <div class="sobre-conteudo">
         <div class="sobre-foto"><img src="profi.jpg" alt="Dra Moira Aíma"></div>
         <div class="sobre-texto">
-          <p>Olá, sou especialista em Medicina Tradicional Chinesa, dedicada a proporcionar saúde e equilíbrio de forma personalizada.</p>
+          <p>Especialista em Medicina Tradicional Chinesa, focada em restaurar o fluxo energético e promover o bem-estar integral.</p>
         </div>
       </div>
     </section>
@@ -291,21 +299,20 @@
     <section class="secao-endereco">
       <h2>Venha nos Visitar!</h2>
       <div class="endereco-flex">
-        <div class="endereco-foto">
-          <img src="end.png" alt="Clínica Moira Aíma">
-        </div>
+        <div class="endereco-foto"><img src="end.png" alt="Clínica"></div>
         <div class="mapa-lado">
           <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3646.220194458315!2d-46.33159932454131!3d-23.95171727853606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce030cfd21f8a7%3A0x673558313495818d!2sR.%20Silva%20Jardim%2C%20166%20-%20Vila%20Mathias%2C%20Santos%20-%20SP%2C%2011015-020!5e0!3m2!1spt-BR!2sbr!4v1703948500000!5m2!1spt-BR!2sbr" 
-            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3646.21629864222!2d-46.3331398!3d-23.9528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce039634d5f2a7%3A0xb1110d4d59070c66!2sR.%20Silva%20Jardim%2C%20166%20-%20Vila%20Matias%2C%20Santos%20-%20SP%2C%2011015-020!5e0!3m2!1spt-BR!2sbr!4v1703953000000!5m2!1spt-BR!2sbr" 
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
           </iframe>
         </div>
       </div>
-      <p style="text-align: center; margin-top: 20px; font-size: 1.1rem; opacity: 0.8;">Rua Silva Jardim, 166 - Vila Mathias - Santos/SP</p>
     </section>
   </main>
 
-  <footer>© 2025 Equilíbrio & Vitalidade - Santos/SP</footer>
+  <footer>
+    <p>© 2025 Equilíbrio & Vitalidade - Dra. Moira Aíma</p>
+  </footer>
 
   <script>
     function toggleServico(button) {

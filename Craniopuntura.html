@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Craniopuntura | Equilíbrio & Vitalidade</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    :root {
+      --dourado: #c5a059;
+      --bege-claro: #f4f1ea;
+      --branco-gelo: #f8f8f5;
+      --verde-profundo: #0b3d2e;
+    }
+    
+    body {
+      margin:0; padding:40px 20px;
+      background-color:var(--verde-profundo);
+      color:var(--branco-gelo);
+      font-family:'Lato',sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    /* Marca d'água de fundo */
+    body::before {
+      content:"";
+      background:url('terapi.png') no-repeat center center;
+      background-size:60%; 
+      opacity:0.05; 
+      position:fixed; 
+      top:0; left:0;
+      width:100%; height:100%;
+      z-index:0;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      padding: 40px;
+      border: 1px solid var(--dourado);
+      background: rgba(255,255,255,0.05);
+      border-radius: 20px;
+      max-width: 800px;
+      backdrop-filter: blur(5px);
+    }
+
+    h1 { font-family: 'Playfair Display', serif; color: var(--dourado); font-size: 2.8rem; margin-bottom: 10px; }
+    h2 { font-family: 'Playfair Display', serif; color: var(--dourado); font-size: 1.8rem; margin-top: 30px; border-bottom: 1px solid rgba(197, 160, 89, 0.3); padding-bottom: 10px; }
+    
+    .icon { font-size: 3rem; color: var(--dourado); margin-bottom: 15px; animation: pulse 2s infinite; }
+    
+    .tecnica-box {
+      text-align: left;
+      margin-bottom: 40px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 12px;
+      font-size: 1.1rem;
+      line-height: 1.5;
+      display: flex;
+      align-items: baseline;
+    }
+
+    li i {
+      color: var(--dourado);
+      margin-right: 10px;
+      font-size: 0.9rem;
+    }
+
+    .highlight {
+      color: var(--dourado);
+      font-weight: bold;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 0.8; }
+      50% { transform: scale(1.1); opacity: 1; }
+      100% { transform: scale(1); opacity: 0.8; }
+    }
+
+    .btn-voltar {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 15px 40px;
+      background: var(--dourado);
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      border: 1px solid var(--dourado);
+    }
+    .btn-voltar:hover { 
+      transform: translateY(-3px); 
+      background: transparent; 
+      color: var(--dourado); 
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <div class="icon"><i class="fa-solid fa-brain"></i></div>
+    <h1>Craniopuntura</h1>
+    <p style="font-style: italic; opacity: 0.9;">Técnicas avançadas de microssistemas para alívio imediato e bem-estar.</p>
+
+    <div class="tecnica-box">
+      <h2>Craniopuntura de Yamamoto (YNSA)</h2>
+      <ul>
+        <li><i class="fa-solid fa-circle-check"></i> Técnica de fácil aplicação.</li>
+        <li><i class="fa-solid fa-circle-check"></i> Resultados imediatos: o paciente sente na hora a melhora dos sintomas.</li>
+        <li><i class="fa-solid fa-circle-check"></i> Pouco invasiva, utilizando pouquíssimas agulhas na região da cabeça e face.</li>
+        <li><i class="fa-solid fa-circle-check"></i> O paciente geralmente permanece sentado e movimenta o local da dor, percebendo melhora ou alívio total instantâneo.</li>
+        <li><i class="fa-solid fa-circle-check"></i> <span class="highlight">Recomendado para:</span> Dores crônicas, agudas e sintomas emocionais. Pode ser aplicada em adultos e crianças com total segurança.</li>
+      </ul>
+    </div>
+
+    <div class="tecnica-box">
+      <h2>Técnica de Crânio de Zhu</h2>
+      <p style="margin-left: 2px; opacity: 0.9;">Um poderoso microssistema, similar à auriculoterapia, focado na região craniana.</p>
+      <ul>
+        <li><i class="fa-solid fa-circle-check"></i> Resultados rápidos e eficientes.</li>
+        <li><i class="fa-solid fa-circle-check"></i> Pouco invasiva e segura, com uso de pouquíssimas agulhas.</li>
+        <li><i class="fa-solid fa-circle-check"></i> Pode ser aplicada em adultos e crianças sem risco.</li>
+        <li><i class="fa-solid fa-circle-check"></i> Resultados percebidos pelo paciente imediatamente, sendo amplamente utilizada em casos de dor.</li>
+      </ul>
+    </div>
+
+    <a href="index.html" class="btn-voltar">Voltar ao Início</a>
+  </div>
+</body>
+</html>
